@@ -1,0 +1,64 @@
+$accent: #3e3aff;
+$accentLight: #d1d1f8;
+$black: #191919;
+$white: #f6f6f6;
+$green: #1a8111;
+$blue: #221380;
+
+.main {
+	padding: 0 8%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+
+	background: url('../../public/bg/Rectangle\ 3.svg'),
+		url('../../public/bg/Rectangle\ 3\ \(1\).svg'),
+		url('../../public/bg/Rectangle\ 4.svg'),
+		url('../../public/bg/reactIcon.svg'),
+		url('../../public/bg/nestIcon.svg'),
+		url('../../public/bg/gitIcon.svg');
+
+	background-position:
+		top left,
+		top right,
+		top 330px right -20px,
+		top 850px right,
+		top 1550px left,
+		top 2000px right;
+	background-repeat: no-repeat;
+	background-size: none;
+
+	.headline {
+		text-align: center;
+		font-size: 48px;
+	}
+}
+
+@media (min-width: 550px) {
+	.main {
+		padding: 0 12%;
+		background-size: 110px, 150px, 130px, 250px, 250px, 250px;
+		background-position:
+			top -500px left,
+			top -50px right ,
+			top 300px right -20px,
+			top 1100px right,
+			top 1650px left,
+			top 2300px right;
+	}
+}
+
+@media (min-width: 921px) {
+	.main {
+		padding: 0 20%;
+		background-size: 100px, 200px, 180px, 250px, 250px, 250px;
+		background-position:
+			top -500px left,
+			top -90px right,
+			top 130px right -20px,
+			top 700px right,
+			top 1050px left,
+			top 1400px right;
+	}
+}

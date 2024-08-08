@@ -1,0 +1,58 @@
+$accent: #3e3aff;
+$accentLight: #d1d1f8;
+$black: #191919;
+$white: #f6f6f6;
+$green: #1a8111;
+$blue: #221380;
+
+.expItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.icon {
+		background-color: $accent;
+		width: 20px;
+		aspect-ratio: 1;
+		border-radius: 999px;
+		border: 5px solid $white;
+		outline: 8px solid $accent;
+		position: relative;
+		margin-left: 0.5rem;
+
+		 .line{
+			position: absolute;
+			display: block;
+			background-color: $accent;
+			border-top: none;
+			border-bottom: none;
+			width: 10px;
+			left: 50%;
+			top: -10px;
+			transform: translateX(-50%);
+			border-radius: 10px;
+				top: 10px;
+		}
+	}
+
+
+
+	.content {
+		border: 2px solid $accent;
+		width: 80%;
+
+		.headline {
+			padding: 0 1rem;
+			margin: 0.7rem 0;
+			font-size: 24px;
+		}
+
+		.text {
+			margin: 0;
+			background: $accent;
+			color: $white;
+			padding: 1rem;
+		}
+	}
+}
+

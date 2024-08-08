@@ -1,0 +1,35 @@
+$accent: #3e3aff;
+$accentLight: #d1d1f8;
+$black: #191919;
+$white: #f6f6f6;
+$green: #1a8111;
+$blue: #221380;
+
+.footer{
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  .headline{
+    color: $white;
+    font-size: 36px;
+    margin: 0;
+  }
+
+
+
+    .link{
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 14px;
+      color: $white;
+      text-decoration: none;
+    }
+  
+}
