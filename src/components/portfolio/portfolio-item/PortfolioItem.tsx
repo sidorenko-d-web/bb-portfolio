@@ -1,3 +1,8 @@
+'use client'
+
+import { type Dispatch, type SetStateAction, useState } from 'react'
+
+import { InteractiveBlock } from './InteractiveBlock'
 import style from './portfolio-item.module.scss'
 
 export interface IItem {
@@ -11,22 +16,39 @@ export interface IItem {
 	back: string[]
 }
 
-export function PortfolioItem({ item }: { item: IItem }) {
+interface IPItem {
+	item: IItem
+	index: number
+	setIsDescOpened: Dispatch<SetStateAction<number>>
+}
+
+export function PortfolioItem({ item, index, setIsDescOpened }: IPItem) {
+	const [isLine, setIsLine] = useState(false)
+
+	let isLeft = true
+
+	if (index % 2 === 1) {
+		isLeft = false
+	}
+
+	const openDesc = () => {
+		setIsDescOpened(isLeft ? 1995 : -1995)
+		setIsLine(true)
+	}
+	const closeDesc = () => {
+		setIsDescOpened(0)
+		setIsLine(false)
+	}
+
 	return (
 		<div className={style.portfolioItem}>
 			<h3 className={style.headline}>{item.title}</h3>
-			<div className={style.imgWrapper}>
-				<img
-					className={style.mainImg}
-					src={item.imgSrc}
-					alt='img'
-				/>
-				<img
-					className={style.hoverImg}
-					src={item.hoverImgSrc}
-					alt='img'
-				/>
-			</div>
+			<InteractiveBlock
+				item={item}
+				isLine={isLine}
+				index={index}
+				closeDesc={closeDesc}
+			/>
 			<div className={style.linkBtns}>
 				<a
 					className={style.gitBtn}
@@ -41,7 +63,12 @@ export function PortfolioItem({ item }: { item: IItem }) {
 					На проект
 				</a>
 			</div>
-			<button className={style.descBtn}>Подробнее об реализации</button>
+			<button
+				onClick={openDesc}
+				className={style.descBtn}
+			>
+				Подробнее об реализации
+			</button>
 		</div>
 	)
 }

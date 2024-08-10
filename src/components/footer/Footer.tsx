@@ -1,89 +1,55 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+import { ContactItem } from './contactItem'
 import style from './footer.module.scss'
 
-export function Footer() {
-	const iconSize = 35
+const links = [
+	{
+		title: 'github',
+		link: 'https://github.com/sidorenko-d-web',
+		icon: '/icons/githubIcon.svg',
+		type: '',
+		content: 'github.com/sidorenko-d-web'
+	},
+	{
+		title: 'mail',
+		link: 'mailto:sidorenko.d.web@gmail.com',
+		icon: '/icons/mailIcon.svg',
+		type: 'email',
+		content: 'sidorenko.d.web@gmail.com'
+	},
+	{
+		title: 'tg',
+		link: 'https://t.me/dm1trysidorenko',
+		icon: '/icons/tgIcon.svg',
+		type: '',
+		content: 't.me/dm1trysidorenko'
+	},
+	{
+		title: 'phone',
+		link: 'tel:89220353733',
+		icon: '/icons/phoneIcon.svg',
+		type: 'phone',
+		content: '+7 922-035-37-33'
+	}
+]
 
+export function Footer() {
 	return (
 		<div className={style.footer}>
 			<h2 className={style.headline}>Контакты</h2>
-			<a
-				className={style.link}
-				href='https://github.com/sidorenko-d-web'
-			>
-				<Image
-					src={'/icons/githubIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='github'
-				/>
-				github.com/sidorenko-d-web
-				<Image
-					src={'/icons/githubIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='github'
-				/>
-			</a>
-			<a
-				className={style.link}
-				href='mailto:sidorenko.d.web@gmail.com'
-				type='email'
-			>
-				<Image
-					src={'/icons/mailIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='mail'
-				/>
-				sidorenko.d.web@gmail.com
-				<Image
-					src={'/icons/mailIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='mail'
-				/>
-			</a>
-
-			<a
-				className={style.link}
-				href='https://t.me/dm1trysidorenko'
-			>
-				<Image
-					src={'/icons/tgIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='tg'
-				/>
-				t.me/dm1trysidorenko
-				<Image
-					src={'/icons/tgIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='tg'
-				/>
-			</a>
-
-			<a
-				className={style.link}
-				href='tel:89220353733'
-				type='phone'
-			>
-				<Image
-					src={'/icons/phoneIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='phone'
-				/>
-				+7 922-035-37-33
-				<Image
-					src={'/icons/phoneIcon.svg'}
-					width={iconSize}
-					height={iconSize}
-					alt='phone'
-				/>
-			</a>
+				{links.map((elem, index) => (
+					<ContactItem
+						key={elem.title}
+						title={elem.title}
+						link={elem.link}
+						icon={elem.icon}
+						type={elem.type}
+						content={elem.content}
+						index={index}
+					/>
+				))}
 		</div>
 	)
 }

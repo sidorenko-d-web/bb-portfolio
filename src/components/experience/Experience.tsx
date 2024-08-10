@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, RefObject, useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import styles from './experience.module.scss'
 import { ExperienceItem } from './experienceItem/ExperienceItem'
@@ -8,7 +8,7 @@ import { useCalcLineHeight } from './useCalculateLinesHeight'
 
 const data = [
 	{
-		title: 'Фриланс - 1год',
+		title: 'Фриланс - 1 год',
 		desc: `Кодер <br /> Отвечал за техническое исполнение заказов с фриланса по
 	ТЗ на React.js. Верстка по макету, стили, разбивка на компоненты,
 	запросы к API`
@@ -16,11 +16,10 @@ const data = [
 	{
 		title: 'Ваша компания',
 		desc: `Здесь могли бы быть вы`
-	}
+	} 
 ]
 
 export function Experience() {
-
 	const ref = useRef<HTMLDivElement>(null)
 	const { lineHeights } = useCalcLineHeight(ref) //finds length for decorative lines
 
@@ -43,5 +42,3 @@ export function Experience() {
 		</div>
 	)
 }
-
-

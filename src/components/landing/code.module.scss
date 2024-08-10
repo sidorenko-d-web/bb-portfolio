@@ -52,7 +52,15 @@ $blue: #221380;
 @media (min-width: 921px) {
 	.code {
 		font-size: 16px;
-		max-width: 200px;
-		left: 130px;
+		max-width: 150px;
+		left: 30px;
+	}
+}
+
+@media (min-width: 1324px) {
+	.code {
+		font-size: 16px;
+		max-width: 150px;
+		left: 170px;
 	}
 }

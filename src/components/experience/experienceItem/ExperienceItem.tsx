@@ -1,8 +1,9 @@
 'use client'
 
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
-import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import styles from './experienceItem.module.scss'
 
@@ -15,12 +16,7 @@ export function ExperienceItem({
 	lineHeight: number
 	index: number
 }) {
-	const [height, setHeight] = useState(0)
 	const ref = useRef<HTMLDivElement>(null)
-
-	useEffect(() => {
-		if (ref.current) setHeight(ref.current.clientHeight)
-	})
 
 	return (
 		<div
@@ -28,10 +24,13 @@ export function ExperienceItem({
 			ref={ref}
 		>
 			<div className={styles.icon}>
-				<div
+				<motion.div
 					className={styles.line}
-					style={{ height: lineHeight, zIndex: 100 - index }}
-				></div>
+					initial={{height:0}}
+					animate={{height: lineHeight}}
+					transition={{duration:1, delay: index}}
+					style={{ zIndex: 100 - index }}
+				></motion.div>
 			</div>
 			<div className={styles.content}>
 				<h3 className={styles.headline}>{elem.title}</h3>
