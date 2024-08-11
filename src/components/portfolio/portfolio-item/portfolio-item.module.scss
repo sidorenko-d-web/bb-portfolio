@@ -92,19 +92,8 @@ $blue: #221380;
 				font-size: 24px;
 				font-weight: 500;
 				padding: 0.5rem 0;
-				transition: all .3s;
 
-				&:hover {
-					scale: 1.05;
-					text-shadow: 0 0 15px $accent;
-					box-shadow:
-						0 0 15px 2px $accentLight,
-						inset 0 0 15px 2px $accentLight;
-				}
-				&:active{
-					scale: 1;
-					background: $accentLight;
-				}
+			
 			}
 		}
 	}
@@ -124,36 +113,18 @@ $blue: #221380;
 			cursor: pointer;
 			font-weight: 600;
 			text-decoration: none;
-			transition: all 0.3s;
 		}
 
 		.gitBtn {
 			background: $accent;
 			color: $white;
-			&:hover {
-				scale: 1.05;
-				filter: brightness(1.2);
-			}
-			&:active{
-				scale: 1;
-				background: $blue;
-			}
+			
 		}
 
 		.projectBtn {
 			background: transparent;
 			color: $accent;
-			&:hover {
-				scale: 1.05;
-				text-shadow: 0 0 15px $accent;
-				box-shadow:
-					0 0 15px 2px $accentLight,
-					inset 0 0 15px 2px $accentLight;
-			}
-			&:active{
-				scale: 1;
-				background: $accentLight;
-			}
+			
 		}
 	}
 	.descBtn {
@@ -164,16 +135,7 @@ $blue: #221380;
 		cursor: pointer;
 		padding: 1rem 0;
 		font-weight: 600;
-		transition: all .3s;
-		&:hover {
-			scale: 1.05;
-			text-shadow: 0 0 5px #f6f6f655;
-			filter: brightness(1.5);
-		}
-		&:active{
-			scale: 1;
-			filter: brightness(0.5);
-		}
+		
 	}
 }
 

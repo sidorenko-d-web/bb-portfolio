@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Dispatch, SetStateAction } from 'react'
 
 import { data } from './data'
@@ -11,10 +12,23 @@ export function Portfolio({
 }) {
 	return (
 		<div className={style.portfolio}>
-			<h2 className={style.headline}>Стек и портфолио</h2>
-			<h3 className={style.subheadline}>
+			<motion.h2
+				initial={{ opacity: 0, translateY: 20 }}
+				whileInView={{ opacity: 1, translateY: 0 }}
+				className={style.headline}
+				viewport={{once: true}}
+			>
+				Стек и портфолио
+			</motion.h2>
+			<motion.h3
+				initial={{ opacity: 0, translateY: 20 }}
+				whileInView={{ opacity: 1, translateY: 0 }}
+				transition={{ delay: 0.3 }}
+				viewport={{once: true}}
+				className={style.subheadline}
+			>
 				Мои проекты с описанием используемых технологий
-			</h3>
+			</motion.h3>
 
 			<div className={style.portfolioList}>
 				{data.map((item, index) => (

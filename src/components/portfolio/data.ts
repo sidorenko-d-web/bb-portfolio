@@ -28,17 +28,24 @@ export const data = [
 		title: 'Аптека ЖизньФарм',
 		imgSrc: apteka.src,
 		hoverImgSrc: '/_next/static/media/bb-timer-hover.9aa63dbd.jpg',
-		link: '',
+		link: 'https://lifefarm.vercel.app/',
 		githubLink: 'https://github.com/sidorenko-d-web/lifefarm',
 		desc: '',
-		front: ['TypeScript', 'React.JS', 'ReactHookForm', 'Axios', 'TailwindCSS'],
+		front: [
+			'TypeScript',
+			'React.JS',
+			'ReactHookForm',
+			'Axios',
+			'TailwindCSS',
+			'Vite'
+		],
 		back: ['TypeScript', 'Express.JS', 'mongodb', 'mongooseORM']
 	},
 	{
 		title: 'Uno',
 		imgSrc: uno.src,
 		hoverImgSrc: '/_next/static/media/bb-timer-hover.9aa63dbd.jpg',
-		link: '',
+		link: 'https://card-game-client.onrender.com/',
 		githubLink: 'https://github.com/sidorenko-d-web/card_game',
 		desc: '',
 		front: ['JavaScript', 'React.JS', 'Vite'],
@@ -51,7 +58,7 @@ export const data = [
 		link: 'https://timer-vu26.onrender.com/',
 		githubLink: 'https://github.com/sidorenko-d-web/timer',
 		desc: '',
-    front: [],
+		front: [],
 		back: [
 			'JavaScript',
 			'Express.JS',

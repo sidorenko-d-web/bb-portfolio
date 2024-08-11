@@ -8,24 +8,22 @@ $blue: #221380;
 .code {
 	color: $black;
 	background-color: $accentLight;
-	width: 50svw;
-	max-width: 250px;
-	min-width: 200px;
+	width: clamp(200px, 50svw, 250px);
 	padding: 0.1rem 0.8rem;
 	line-height: 0.5rem;
 	position: absolute;
 	top: 35vw;
 	right: 0;
 
-	.text {
+	text {
 		color: $green;
 	}
-	.textWraped {
-		@extend .text;
-		padding-left: 2rem;
-	}
-	.number {
+	
+	number {
 		color: $blue;
+	}
+	.textWraped {
+		padding-left: 2rem;
 	}
 	.lines {
 		padding-left: 1rem;
@@ -52,7 +50,7 @@ $blue: #221380;
 @media (min-width: 921px) {
 	.code {
 		font-size: 16px;
-		max-width: 150px;
+		max-width: 200px;
 		left: 30px;
 	}
 }
@@ -60,7 +58,6 @@ $blue: #221380;
 @media (min-width: 1324px) {
 	.code {
 		font-size: 16px;
-		max-width: 150px;
 		left: 170px;
 	}
 }

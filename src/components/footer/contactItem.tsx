@@ -4,6 +4,8 @@ import React from 'react'
 
 import style from './footer.module.scss'
 
+
+
 export function ContactItem({
 	title,
 	link,
@@ -20,19 +22,31 @@ export function ContactItem({
 	index: number
 }) {
 	const iconSize = 40
+
+  const linkVariant = {
+    animation:{
+			width: 'auto',
+			
+      transition: {
+        duration: 1,
+        delay: index / 5,
+        type: 'spring',
+        stiffness: 50
+      }
+    },
+    hover:{
+      scale: 1.1,
+    }
+  }
 	return (
 		<motion.a
 			className={style.link}
 			href={link}
-			initial={{ width: iconSize }}
-			animate={{ width: 'auto' }}
-			transition={{
-				duration: 1,
-				delay: index / 5,
-				type: 'spring',
-				stiffness: 50
-			}}
-      whileHover={{scale: 1.1}}
+      variants={linkVariant}
+			initial={{ width: iconSize}}
+			whileInView='animation'
+      whileHover='hover'
+			viewport={{once: true}}
 			type={type}
 		>
 			<Image

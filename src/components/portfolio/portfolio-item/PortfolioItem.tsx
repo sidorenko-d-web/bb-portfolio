@@ -1,5 +1,6 @@
 'use client'
 
+import { delay, motion } from 'framer-motion'
 import { type Dispatch, type SetStateAction, useState } from 'react'
 
 import { InteractiveBlock } from './InteractiveBlock'
@@ -41,8 +42,16 @@ export function PortfolioItem({ item, index, setIsDescOpened }: IPItem) {
 	}
 
 	return (
-		<div className={style.portfolioItem}>
-			<h3 className={style.headline}>{item.title}</h3>
+		<motion.div className={style.portfolioItem}>
+			<motion.h3
+				initial={{ translateY: 10, opacity: 0 }}
+				whileInView={{ translateY: 0, opacity: 1 }}
+				transition={{ delay: index / 10, type: 'spring', stiffness: 300 }}
+				viewport={{ once: true }}
+				className={style.headline}
+			>
+				{item.title}
+			</motion.h3>
 			<InteractiveBlock
 				item={item}
 				isLine={isLine}
@@ -50,25 +59,45 @@ export function PortfolioItem({ item, index, setIsDescOpened }: IPItem) {
 				closeDesc={closeDesc}
 			/>
 			<div className={style.linkBtns}>
-				<a
+				<motion.a
+					initial={{ translateY: 10, opacity: 0 }}
+					whileInView={{ translateY: 0, opacity: 1 }}
+					transition={{
+						delay: 0.2 + index / 10,
+						type: 'spring',
+						stiffness: 300
+					}}
+					viewport={{ once: true }}
 					className={style.gitBtn}
 					href={item.githubLink}
 				>
 					github
-				</a>
-				<a
+				</motion.a>
+				<motion.a
+					initial={{ translateY: 10, opacity: 0 }}
+					whileInView={{ translateY: 0, opacity: 1 }}
+					transition={{
+						delay: 0.4 + index / 10,
+						type: 'spring',
+						stiffness: 300
+					}}
+					viewport={{ once: true }}
 					className={style.projectBtn}
 					href={item.link}
 				>
 					На проект
-				</a>
+				</motion.a>
 			</div>
-			<button
+			<motion.button
+				initial={{ translateY: 10, opacity: 0 }}
+				whileInView={{ translateY: 0, opacity: 1 }}
+				transition={{ delay: 0.6 + index / 10, type: 'spring', stiffness: 300 }}
+				viewport={{ once: true }}
 				onClick={openDesc}
 				className={style.descBtn}
 			>
 				Подробнее об реализации
-			</button>
-		</div>
+			</motion.button>
+		</motion.div>
 	)
 }

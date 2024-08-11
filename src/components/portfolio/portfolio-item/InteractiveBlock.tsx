@@ -39,7 +39,13 @@ export function InteractiveBlock({
 	}
 
 	return (
-		<div className={style.imgWrapper}>
+		<motion.div
+			className={style.imgWrapper}
+			initial={{ translateY: 10, opacity: 0 }}
+			whileInView={{ translateY: 0, opacity: 1 }}
+			transition={{ delay: index / 10, type: 'spring', stiffness: 300 }}
+			viewport={{ once: true }}
+		>
 			<img
 				className={style.mainImg}
 				src={item.imgSrc}
@@ -101,13 +107,11 @@ export function InteractiveBlock({
 									<p>{parse(item.desc)}</p>
 								</>
 							)}
-							<button onClick={closeDesc}>
-								Вернуться
-							</button>
+							<button onClick={closeDesc}>Вернуться</button>
 						</motion.div>
 					</>
 				)}
 			</AnimatePresence>
-		</div>
+		</motion.div>
 	)
 }

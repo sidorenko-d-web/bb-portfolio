@@ -27,9 +27,10 @@ export function ExperienceItem({
 				<motion.div
 					className={styles.line}
 					initial={{height:0}}
-					animate={{height: lineHeight}}
+					whileInView={{height: lineHeight,}}
 					transition={{duration:1, delay: index}}
 					style={{ zIndex: 100 - index }}
+					viewport={{amount:'all', once: true}}
 				></motion.div>
 			</div>
 			<div className={styles.content}>

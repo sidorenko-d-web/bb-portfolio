@@ -1,6 +1,3 @@
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-
 import { ContactItem } from './contactItem'
 import style from './footer.module.scss'
 
@@ -39,17 +36,17 @@ export function Footer() {
 	return (
 		<div className={style.footer}>
 			<h2 className={style.headline}>Контакты</h2>
-				{links.map((elem, index) => (
-					<ContactItem
-						key={elem.title}
-						title={elem.title}
-						link={elem.link}
-						icon={elem.icon}
-						type={elem.type}
-						content={elem.content}
-						index={index}
-					/>
-				))}
+			{links.map((elem, index) => (
+				<ContactItem
+					key={elem.title}
+					title={elem.title}
+					link={elem.link}
+					icon={elem.icon}
+					type={elem.type}
+					content={elem.content}
+					index={index}
+				/>
+			))}
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
-import React from 'react'
 
 import { Code } from './Code'
 import styles from './landing.module.scss'
@@ -17,14 +17,26 @@ export function Landing() {
 				/>
 				<Code />
 			</div>
-			<div className={styles.about}>
+			<motion.div
+				initial={{
+					rotateX: 20,
+					rotateY: -20,
+					opacity: 0
+				}}
+				animate={{
+					rotateX:0,
+					rotateY:0,
+					opacity: 1
+				}}
+				transition={{ type: 'spring', stiffness:500, delay: 1, duration: .5}}
+				className={styles.about}>
 				<h2 className={styles.headline}>О себе</h2>
 				<p className={styles.text}>
 					Вы когда-либо мечтали, иметь силу, создать все, что только пожелаете?
-					Именно так я отношусь к своему делу. Обожаю <b>сложные</b> задачи, 
+					Именно так я отношусь к своему делу. Обожаю <b>сложные</b> задачи,
 					<b> интересные</b> проекты и <b>изучать</b> новые технологии.
 				</p>
-			</div>
+			</motion.div>
 		</div>
 	)
 }
