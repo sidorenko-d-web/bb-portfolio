@@ -70,6 +70,7 @@ export function PortfolioItem({ item, index, setIsDescOpened }: IPItem) {
 					viewport={{ once: true }}
 					className={style.gitBtn}
 					href={item.githubLink}
+					target="_blank"
 				>
 					github
 				</motion.a>
@@ -84,6 +85,7 @@ export function PortfolioItem({ item, index, setIsDescOpened }: IPItem) {
 					viewport={{ once: true }}
 					className={style.projectBtn}
 					href={item.link}
+					target="_blank"
 				>
 					На проект
 				</motion.a>
